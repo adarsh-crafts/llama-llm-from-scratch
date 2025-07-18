@@ -274,4 +274,4 @@ $$
 
 ---
 
-> _Feel free to explore the actual code implementation in [notebooks/02_attention_mechanism.ipynb](notebooks\02_attention_mechanism.ipynb) for a practical walkthrough._
+> _Feel free to explore the actual code implementation in [notebooks/02_attention_mechanism.ipynb](../notebooks/02_attention_mechanism.ipynb) for a practical walkthrough._
