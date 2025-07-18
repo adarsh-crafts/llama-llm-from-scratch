@@ -132,22 +132,28 @@ Let’s assume identity matrices for the projection weights (i.e., $W_Q = W_K = 
 
 Each token compares its Query with all Keys:
 
+We compute the attention scores as:
+
+$$
+Q = \begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+1 & 1
+\end{bmatrix}, \quad
+K^T = \begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 1
+\end{bmatrix}
+$$
+
+Then,
+
 $$
 \text{Scores} = QK^T =
 \begin{bmatrix}
-1 & 0 \\
-0 & 1 \\
-1 & 1 \\
-\end{bmatrix}
-\begin{bmatrix}
 1 & 0 & 1 \\
 0 & 1 & 1 \\
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 0 & 1 \\
-0 & 1 & 1 \\
-1 & 1 & 2 \\
+1 & 1 & 2
 \end{bmatrix}
 $$
 
@@ -173,11 +179,10 @@ $$
 Each row is softmaxed (ignoring masked `-∞` values):
 
 Example:
-$$
-\text{softmax}([1, -\infty, -\infty]) = [1, 0, 0] \\
-\text{softmax}([0, 1, -\infty]) = [0.268, 0.731, 0] \\
-\text{softmax}([1, 1, 2]) = [0.211, 0.211, 0.576]
-$$
+
+- $\text{softmax}([1, -\infty, -\infty]) = [1, 0, 0]$
+- $\text{softmax}([0, 1, -\infty]) = [0.268, 0.731, 0]$
+- $\text{softmax}([1, 1, 2]) = [0.211, 0.211, 0.576]$
 
 ---
 
@@ -199,9 +204,8 @@ Below are the heatmaps for each stage of attention:
 
 Each output token embedding is computed by weighted sum over values:
 
-$$
-\text{Output}_i = \sum_{j=1}^{T} \text{Attention}_{ij} \cdot V_j
-$$
+$\text{Output}_i = \sum_{j=1}^{T} \text{Attention}_{ij} \cdot V_j$
+
 
 This produces contextualized representations that blend information from prior tokens.
 
