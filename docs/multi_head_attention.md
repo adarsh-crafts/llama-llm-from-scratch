@@ -108,6 +108,110 @@ Each token’s output is a weighted sum of the values of all tokens.
 
 ---
 
+## 🧪 Worked Example: 3-Token Self-Attention from Scratch
+
+Let’s walk through a simple self-attention example using 3 tokens: `"The"`, `"cat"`, and `"sat"`. We'll use small 2D vectors for clarity.
+
+### Input Embeddings
+We define our tokens’ embeddings as:
+
+| Token | Vector |
+|-------|--------|
+| `The` | [1, 0] |
+| `cat` | [0, 1] |
+| `sat` | [1, 1] |
+
+Let’s assume identity matrices for the projection weights (i.e., $W_Q = W_K = W_V = I$), so:
+
+- $Q = K = X$
+- $V = \begin{bmatrix} [1, 2] \\ [3, 0] \\ [0, 1] \end{bmatrix}$
+
+---
+
+### Step 1: Raw Attention Scores ($QK^T$)
+
+Each token compares its Query with all Keys:
+
+$$
+\text{Scores} = QK^T =
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+1 & 1 & 2 \\
+\end{bmatrix}
+$$
+
+---
+
+### Step 2: Causal Masking
+
+To prevent future-token leakage, we mask upper-triangle entries:
+
+$$
+\text{Masked Scores} =
+\begin{bmatrix}
+1 & -\infty & -\infty \\
+0 & 1 & -\infty \\
+1 & 1 & 2 \\
+\end{bmatrix}
+$$
+
+---
+
+### Step 3: Softmax Normalization
+
+Each row is softmaxed (ignoring masked `-∞` values):
+
+Example:
+$$
+\text{softmax}([1, -\infty, -\infty]) = [1, 0, 0] \\
+\text{softmax}([0, 1, -\infty]) = [0.268, 0.731, 0] \\
+\text{softmax}([1, 1, 2]) = [0.211, 0.211, 0.576]
+$$
+
+---
+
+### 🔥 Visualizing the Attention Flow
+
+Below are the heatmaps for each stage of attention:
+
+<p align="center">
+  <img src="..\assets\attention_heatmaps.png" alt="Attention Heatmaps" width="700"/>
+</p>
+
+- Left: raw dot products ($QK^T$)
+- Middle: causal mask applied (future blocked)
+- Right: softmax weights for each token
+
+---
+
+### Step 4: Weighted Sum of Values
+
+Each output token embedding is computed by weighted sum over values:
+
+$$
+\text{Output}_i = \sum_{j=1}^{T} \text{Attention}_{ij} \cdot V_j
+$$
+
+This produces contextualized representations that blend information from prior tokens.
+
+---
+
+> This hands-on example illustrates how each attention step works — from score calculation, to masking, to normalization, to final output.
+
+
+---
+
 ## 🧩 Multi-Head Attention
 
 Instead of performing attention once, the model runs multiple attention heads in parallel.
