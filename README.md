@@ -1,6 +1,6 @@
-# Building a Llama LLM From Scratch in PyTorch
+# LLaMA LLM From Scratch in PyTorch
 
-A hands-on implementation of a modern, Llama-like Large Language Model to learn transformer fundamentals from first principles.
+A hands-on, educational implementation of a modern, LLaMA-style Large Language Model (LLM) to learn Transformer fundamentals and architecture from first principles using PyTorch.
 
 ## Table of Contents
 - [Project Goal](#project-goal)
@@ -12,27 +12,27 @@ A hands-on implementation of a modern, Llama-like Large Language Model to learn 
 ---
 
 ## Project Goal
-The objective of this repository is not to create a production-ready model, but to serve as a detailed, educational implementation of a modern transformer architecture. By building each core component from scratch in PyTorch, this project explores the mechanics behind Large Language Models and serves as a portfolio piece demonstrating a deep, first-principles understanding of the technology.
+The objective of this repository is not to create a production-ready LLM, but to serve as a detailed, educational implementation of a modern Transformer-based architecture inspired by Meta's LLaMA model. By building each core component from scratch in PyTorch, this project explores the internal mechanics of Large Language Models and serves as a portfolio piece demonstrating a deep, first-principles understanding of foundational LLM technologies.
 
 ---
 
 ## Key Architectural Concepts
-This implementation is based on a modern, decoder-only transformer architecture and includes several state-of-the-art optimizations:
+This implementation is based on a modern, decoder-only Transformer architecture and includes several state-of-the-art optimizations commonly used in LLaMA and other leading LLMs:
 
-* **Multi-Head Attention:** The core mechanism allowing the model to weigh the importance of different tokens.
-* **Grouped-Query Attention (GQA):** An efficient optimization that reduces the computational and memory requirements of the attention mechanism.
-* **Rotary Positional Embeddings (RoPE):** A sophisticated method for encoding the relative position of tokens.
-* **RMS Pre-Normalization:** A technique used to stabilize the network during training.
-* **Feed-Forward Networks:** The component that processes the contextualized embeddings from the attention block.
+* **Multi-Head Attention:** The core mechanism allowing the model to weigh the importance of different tokens within a sequence.
+* **Grouped-Query Attention (GQA):** An efficient optimization used in LLaMA models that reduces the computational and memory requirements of the attention mechanism.
+* **Rotary Positional Embeddings (RoPE):** A sophisticated method for encoding the relative position of tokens, adopted by models like LLaMA.
+* **RMS Pre-Normalization:** A technique used to stabilize the network during training in transformer-based LLMs.
+* **Feed-Forward Networks:** The component that processes the contextualized embeddings from the attention block, enabling deep learning of language representations.
 
 ---
 
 ## Setup and Usage
-To explore this project, you can run the Jupyter notebooks which break down each component of the model.
+To explore this project and learn LLaMA architecture concepts in PyTorch, you can run the Jupyter notebooks which break down each component of the model.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/adarshn656/llama-from-scratch.git](https://github.com/adarshn656/llama-from-scratch.git)
+    git clone https://github.com/adarshn656/llama-from-scratch.git
     cd llama-from-scratch
     ```
 2.  **Create and activate a virtual environment:**
@@ -53,11 +53,11 @@ To explore this project, you can run the Jupyter notebooks which break down each
 ```
 .
 ├── docs/
-│   └── multi_head_attention.md   # In-depth explanation of the attention mechanism
-│   └── rope_explained.md   # In-depth explanation of Rotary Positional Embedding
+│ └── multi_head_attention.md # In-depth explanation of the attention mechanism in Transformers
+│ └── rope_explained.md # In-depth explanation of Rotary Positional Embedding (RoPE)
 ├── notebooks/
-│   ├── 01_tokenizer.ipynb
-│   └── 02_multi_head_attention.ipynb
+│ ├── 01_tokenizer.ipynb
+│ └── 02_multi_head_attention.ipynb
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -67,7 +67,7 @@ To explore this project, you can run the Jupyter notebooks which break down each
 ---
 
 ## Detailed Documentation
-For a deeper, mathematical breakdown of the core components, please refer to the documents in the `docs/` folder:
+For a deeper, mathematical breakdown of the core LLaMA-inspired components, please refer to the documents in the `docs/` folder:
 
 * **[A Deep Dive into the Multi-Head Attention Mechanism](./docs/multi_head_attention.md)**
 * *(RoPE document - coming soon!)*
