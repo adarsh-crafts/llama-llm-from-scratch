@@ -52,12 +52,14 @@ To explore this project and learn LLaMA architecture concepts in PyTorch, you ca
 ## Project Structure
 ```
 .
+├── assets/ # assets used in the documentation files
 ├── docs/
 │ └── multi_head_attention.md # In-depth explanation of the attention mechanism in Transformers
 │ └── rope_explained.md # In-depth explanation of Rotary Positional Embedding (RoPE)
 ├── notebooks/
 │ ├── 01_tokenizer.ipynb
 │ └── 02_multi_head_attention.ipynb
+│ └── 03_feed_forward_network.ipynb
 ├── .gitignore
 ├── LICENSE
 ├── README.md
