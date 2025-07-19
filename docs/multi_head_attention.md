@@ -78,7 +78,7 @@ Each row in this matrix represents how much one token attends to all others in t
 
 To preserve autoregressive behavior (i.e., no peeking into the future), we apply a **causal mask**:
 
-![Masked Scores](../assets/masked_scores.svg)
+![Masked Scores](../assets/masked_scores.png)
 
 3. **Softmax Normalization**
 
@@ -119,7 +119,7 @@ Let’s assume identity matrices for the projection weights (i.e., $W_Q = W_K = 
 
 - $Q = K = X$  
 
-  ![V Matrix](../assets/projection_weights_V.svg)
+  ![V Matrix](../assets/projection_matrix_V.png)
 
 ---
 
@@ -199,7 +199,7 @@ Below are the heatmaps for each stage of attention:
 
 Each output token embedding is computed by weighted sum over values:
 
-![Final Output](../assets/final_weighted_sum_output.svg)
+![Final Output](../assets/final_weighted_sum_output.png)
 
 This produces contextualized representations that blend information from prior tokens.
 
