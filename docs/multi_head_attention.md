@@ -124,7 +124,7 @@ We define our tokens’ embeddings as:
 Let’s assume identity matrices for the projection weights (i.e., $W_Q = W_K = W_V = I$), so:
 
 - $Q = K = X$
-- $V = \begin{bmatrix} [1, 2] \\ [3, 0] \\ [0, 1] \end{bmatrix}$
+- $V = \begin{bmatrix} 1 & 2 \\ 3 & 0 \\ 0 & 1 \end{bmatrix}$
 
 ---
 
@@ -204,7 +204,11 @@ Below are the heatmaps for each stage of attention:
 
 Each output token embedding is computed by weighted sum over values:
 
+<!-- Full expression for full LaTeX support -->
 $\text{Output}_i = \sum_{j=1}^{T} \text{Attention}_{ij} \cdot V_j$
+
+<!-- GitHub fallback -->
+`Outputᵢ = ∑ Attentionᵢⱼ × Vⱼ`
 
 
 This produces contextualized representations that blend information from prior tokens.
