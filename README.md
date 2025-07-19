@@ -1,4 +1,4 @@
-# Building a Llama-like LLM From Scratch
+# Building a Llama LLM From Scratch in PyTorch
 
 A hands-on implementation of a modern, Llama-like Large Language Model to learn transformer fundamentals from first principles.
 
