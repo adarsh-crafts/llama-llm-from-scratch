@@ -123,7 +123,7 @@ We define our tokens’ embeddings as:
 
 Let’s assume identity matrices for the projection weights (i.e., $W_Q = W_K = W_V = I$), so:
 
-- $Q = K = X$
+- $Q = K = X$  
 $V = \begin{bmatrix} 1 & 2 \\ 3 & 0 \\ 0 & 1 \end{bmatrix}$
 
 ---
