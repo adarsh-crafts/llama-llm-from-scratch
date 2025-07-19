@@ -78,13 +78,7 @@ Each row in this matrix represents how much one token attends to all others in t
 
 To preserve autoregressive behavior (i.e., no peeking into the future), we apply a **causal mask**:
 
-$$
-\text{MaskedScores}_{ij} = 
-\begin{cases}
-\text{Scores}_{ij}, & \text{if } j \leq i \\
--\infty, & \text{if } j > i
-\end{cases}
-$$
+![Masked Scores](../assets/masked_scores.svg)
 
 3. **Softmax Normalization**
 
@@ -124,14 +118,8 @@ We define our tokens’ embeddings as:
 Let’s assume identity matrices for the projection weights (i.e., $W_Q = W_K = W_V = I$), so:
 
 - $Q = K = X$  
-$$
-V = \begin{bmatrix}
-1 & 2 \\
-3 & 0 \\
-0 & 1 \\
-\end{bmatrix}
-$$
 
+  ![V Matrix](../assets/projection_weights_V.svg)
 
 ---
 
@@ -211,19 +199,13 @@ Below are the heatmaps for each stage of attention:
 
 Each output token embedding is computed by weighted sum over values:
 
-<!-- Full expression for full LaTeX support -->
-$\text{Output}_i = \sum_{j=1}^{T} \text{Attention}_{ij} \cdot V_j$
-
-<!-- GitHub fallback -->
-`Outputᵢ = ∑ Attentionᵢⱼ × Vⱼ`
-
+![Final Output](../assets/final_weighted_sum_output.svg)
 
 This produces contextualized representations that blend information from prior tokens.
 
 ---
 
 > This hands-on example illustrates how each attention step works — from score calculation, to masking, to normalization, to final output.
-
 
 ---
 
