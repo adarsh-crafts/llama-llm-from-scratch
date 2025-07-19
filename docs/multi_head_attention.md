@@ -125,7 +125,8 @@ Let’s assume identity matrices for the projection weights (i.e., $W_Q = W_K = 
 
 - $Q = K = X$  
 $$
-V = \begin{bmatrix}
+\text{V} = 
+\begin{bmatrix}
 1 & 2 \\
 3 & 0 \\
 0 & 1 \\
