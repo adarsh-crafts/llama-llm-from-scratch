@@ -8,6 +8,7 @@ A hands-on, educational implementation of a modern, LLaMA-style Large Language M
 - [Setup and Usage](#setup-and-usage)
 - [Project Structure](#project-structure)
 - [Detailed Documentation](#detailed-documentation)
+- [Project Blog Series](#project-blog-series)
 
 ---
 
@@ -32,7 +33,7 @@ To explore this project and learn LLaMA architecture concepts in PyTorch, you ca
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/adarshn656/llama-from-scratch.git
+    git clone [https://github.com/adarshn656/llama-from-scratch.git](https://github.com/adarshn656/llama-from-scratch.git)
     cd llama-from-scratch
     ```
 2.  **Create and activate a virtual environment:**
@@ -54,12 +55,12 @@ To explore this project and learn LLaMA architecture concepts in PyTorch, you ca
 .
 ├── assets/ # assets used in the documentation files
 ├── docs/
-│ └── multi_head_attention.md # In-depth explanation of the attention mechanism in Transformers
-│ └── rope_explained.md # In-depth explanation of Rotary Positional Embedding (RoPE)
+│   └── multi_head_attention.md # In-depth explanation of the attention mechanism in Transformers
+│   └── rope_explained.md # In-depth explanation of Rotary Positional Embedding (RoPE)
 ├── notebooks/
-│ ├── 01_tokenizer.ipynb
-│ └── 02_multi_head_attention.ipynb
-│ └── 03_feed_forward_network.ipynb
+│   ├── 01_tokenizer.ipynb
+│   └── 02_multi_head_attention.ipynb
+│   └── 03_feed_forward_network.ipynb
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -73,3 +74,12 @@ For a deeper, mathematical breakdown of the core LLaMA-inspired components, plea
 
 * **[A Deep Dive into the Multi-Head Attention Mechanism](./docs/multi_head_attention.md)**
 * *(RoPE document - coming soon!)*
+
+---
+
+## Project Blog Series
+I am also documenting my learning journey and explaining these concepts in a series of articles on Medium.
+
+* **Part 1: [Build a Byte-Pair Encoding (BPE) Tokenizer from Scratch in Python](your-medium-link-here)**
+* *(Part 2: Multi-Head Attention - coming soon!)*
+* *(Part 3: Feed-Forward Networks - coming soon!)*
