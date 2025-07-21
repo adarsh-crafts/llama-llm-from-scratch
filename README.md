@@ -83,3 +83,10 @@ I am also documenting my learning journey and explaining these concepts in a ser
 * **Part 1: [Build a Byte-Pair Encoding (BPE) Tokenizer from Scratch in Python](your-medium-link-here)**
 * *(Part 2: Multi-Head Attention - coming soon!)*
 * *(Part 3: Feed-Forward Networks - coming soon!)*
+---
+
+## Learning and Discussion
+
+This project is a core part of my learning journey into the fundamentals of LLMs. As I'm still learning, I'm very open to discussing concepts, clarifying methods, or improving the implementation.
+
+If you have any questions, feedback, or suggestions, please feel free to open an issue.
