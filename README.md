@@ -73,16 +73,14 @@ To explore this project and learn LLaMA architecture concepts in PyTorch, you ca
 For a deeper, mathematical breakdown of the core LLaMA-inspired components, please refer to the documents in the `docs/` folder:
 
 * **[A Deep Dive into the Multi-Head Attention Mechanism](./docs/multi_head_attention.md)**
-* *(RoPE document - coming soon!)*
 
 ---
 
 ## Project Blog Series
 I am also documenting my learning journey and explaining these concepts in a series of articles on Medium.
 
-* **Part 1: [Build a Byte-Pair Encoding (BPE) Tokenizer from Scratch in Python](your-medium-link-here)**
-* *(Part 2: Multi-Head Attention - coming soon!)*
-* *(Part 3: Feed-Forward Networks - coming soon!)*
+* **[Please find the links here in my portfolio](https://adarsh-crafts.github.io)**
+
 ---
 
 ## Learning and Discussion
